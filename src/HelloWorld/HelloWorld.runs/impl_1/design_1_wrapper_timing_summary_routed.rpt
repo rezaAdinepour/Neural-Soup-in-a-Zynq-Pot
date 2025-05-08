@@ -1,0 +1,625 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (lin64) Build 4029153 Fri Oct 13 20:13:54 MDT 2023
+| Date         : Thu May  8 12:30:06 2025
+| Host         : r3z4 running 64-bit Ubuntu 25.04
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file design_1_wrapper_timing_summary_routed.rpt -pb design_1_wrapper_timing_summary_routed.pb -rpx design_1_wrapper_timing_summary_routed.rpx -warn_on_violation
+| Design       : design_1_wrapper
+| Device       : 7z010-clg400
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                                                       Violations  
+---------  ----------------  ----------------------------------------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell                                       12          
+CKLD-2     Warning           Clock Net has IO Driver, not a Clock Buf, and/or non-Clock loads  2           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (12)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (15)
+5. checking no_input_delay (5)
+6. checking no_output_delay (5)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (12)
+-------------------------
+ There are 6 register/latch pins with no clock driven by root clock pin: ENET0_GMII_RX_CLK_0 (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: ENET0_GMII_TX_CLK_0 (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (15)
+-------------------------------------------------
+ There are 15 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (5)
+------------------------------
+ There are 5 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (5)
+-------------------------------
+ There are 5 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                   20          inf        0.000                      0                   20       17.845        0.000                       0                     1  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock       Waveform(ns)       Period(ns)      Frequency(MHz)
+-----       ------------       ----------      --------------
+clk_fpga_0  {0.000 10.000}     20.000          50.000          
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk_fpga_0                                                                                                                                                     17.845        0.000                       0                     1  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  clk_fpga_0
+  To Clock:  clk_fpga_0
+
+Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
+PW    :            0  Failing Endpoints,  Worst Slack       17.845ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         clk_fpga_0
+Waveform(ns):       { 0.000 10.000 }
+Period(ns):         20.000
+Sources:            { design_1_i/processing_system7_0/inst/PS7_i/FCLKCLK[0] }
+
+Check Type  Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period  n/a     BUFG/I   n/a            2.155         20.000      17.845     BUFGCTRL_X0Y0  design_1_i/processing_system7_0/inst/buffer_fclk_clk_0.FCLK_CLK_0_BUFG/I
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay            20 Endpoints
+Min Delay            20 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            ENET0_GMII_TX_EN_0[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.665ns  (logic 3.995ns (59.930%)  route 2.671ns (40.070%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y82         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_reg/C
+    SLICE_X26Y82         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_reg/Q
+                         net (fo=1, routed)           2.671     3.127    ENET0_GMII_TX_EN_0_OBUF[0]
+    A20                  OBUF (Prop_obuf_I_O)         3.539     6.665 r  ENET0_GMII_TX_EN_0_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     6.665    ENET0_GMII_TX_EN_0[0]
+    A20                                                               r  ENET0_GMII_TX_EN_0[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            enet0_gmii_txd[2]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.331ns  (logic 3.967ns (62.665%)  route 2.364ns (37.335%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y79         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[2]/C
+    SLICE_X26Y79         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[2]/Q
+                         net (fo=1, routed)           2.364     2.820    enet0_gmii_txd_OBUF[2]
+    F17                  OBUF (Prop_obuf_I_O)         3.511     6.331 r  enet0_gmii_txd_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     6.331    enet0_gmii_txd[2]
+    F17                                                               r  enet0_gmii_txd[2] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            enet0_gmii_txd[3]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.327ns  (logic 3.970ns (62.745%)  route 2.357ns (37.255%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y79         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[3]/C
+    SLICE_X26Y79         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[3]/Q
+                         net (fo=1, routed)           2.357     2.813    enet0_gmii_txd_OBUF[3]
+    F16                  OBUF (Prop_obuf_I_O)         3.514     6.327 r  enet0_gmii_txd_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     6.327    enet0_gmii_txd[3]
+    F16                                                               r  enet0_gmii_txd[3] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            enet0_gmii_txd[0]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.250ns  (logic 3.978ns (63.646%)  route 2.272ns (36.354%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y68         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/C
+    SLICE_X27Y68         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/Q
+                         net (fo=1, routed)           2.272     2.728    enet0_gmii_txd_OBUF[0]
+    F20                  OBUF (Prop_obuf_I_O)         3.522     6.250 r  enet0_gmii_txd_OBUF[0]_inst/O
+                         net (fo=0)                   0.000     6.250    enet0_gmii_txd[0]
+    F20                                                               r  enet0_gmii_txd[0] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            enet0_gmii_txd[1]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        6.114ns  (logic 3.978ns (65.067%)  route 2.136ns (34.933%))
+  Logic Levels:           2  (FDRE=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X27Y68         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[1]/C
+    SLICE_X27Y68         FDRE (Prop_fdre_C_Q)         0.456     0.456 r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[1]/Q
+                         net (fo=1, routed)           2.136     2.592    enet0_gmii_txd_OBUF[1]
+    F19                  OBUF (Prop_obuf_I_O)         3.522     6.114 r  enet0_gmii_txd_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     6.114    enet0_gmii_txd[1]
+    F19                                                               r  enet0_gmii_txd[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.270ns  (logic 2.374ns (55.603%)  route 1.896ns (44.397%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXD[2])
+                                                      2.374     2.374 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXD[2]
+                         net (fo=1, routed)           1.896     4.270    design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_i[2]
+    SLICE_X26Y79         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_reg/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.174ns  (logic 2.004ns (48.010%)  route 2.170ns (51.990%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXEN)
+                                                      2.004     2.004 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXEN
+                         net (fo=1, routed)           2.170     4.174    design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_i
+    SLICE_X26Y82         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TX_EN_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.154ns  (logic 2.374ns (57.153%)  route 1.780ns (42.847%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXD[3])
+                                                      2.374     2.374 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXD[3]
+                         net (fo=1, routed)           1.780     4.154    design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_i[3]
+    SLICE_X26Y79         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        4.065ns  (logic 2.374ns (58.404%)  route 1.691ns (41.596%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXD[1])
+                                                      2.374     2.374 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXD[1]
+                         net (fo=1, routed)           1.691     4.065    design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_i[1]
+    SLICE_X27Y68         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        3.941ns  (logic 2.374ns (60.241%)  route 1.567ns (39.759%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXD[0])
+                                                      2.374     2.374 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXD[0]
+                         net (fo=1, routed)           1.567     3.941    design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_i[0]
+    SLICE_X27Y68         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXDV
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.898ns  (logic 0.141ns (15.702%)  route 0.757ns (84.298%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y68         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i_reg/C
+    SLICE_X26Y68         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i_reg/Q
+                         net (fo=1, routed)           0.757     0.898    design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i
+    PS7_X0Y0             PS7                                          r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXDV
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[0]
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.098ns  (logic 0.141ns (12.838%)  route 0.957ns (87.162%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y49         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[0]/C
+    SLICE_X26Y49         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[0]/Q
+                         net (fo=1, routed)           0.957     1.098    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i[0]
+    PS7_X0Y0             PS7                                          r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[0]
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 enet0_gmii_rxd[3]
+                            (input port)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.112ns  (logic 0.327ns (29.424%)  route 0.785ns (70.576%))
+  Logic Levels:           1  (IBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y17                                               0.000     0.000 r  enet0_gmii_rxd[3] (IN)
+                         net (fo=0)                   0.000     0.000    enet0_gmii_rxd[3]
+    Y17                  IBUF (Prop_ibuf_I_O)         0.327     0.327 r  enet0_gmii_rxd_IBUF[3]_inst/O
+                         net (fo=1, routed)           0.785     1.112    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD[3]
+    SLICE_X26Y49         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[3]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[3]
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.123ns  (logic 0.141ns (12.557%)  route 0.982ns (87.443%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y49         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[3]/C
+    SLICE_X26Y49         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[3]/Q
+                         net (fo=1, routed)           0.982     1.123    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i[3]
+    PS7_X0Y0             PS7                                          r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[3]
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 enet0_gmii_rxd[1]
+                            (input port)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.125ns  (logic 0.239ns (21.240%)  route 0.886ns (78.760%))
+  Logic Levels:           1  (IBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    V16                                               0.000     0.000 r  enet0_gmii_rxd[1] (IN)
+                         net (fo=0)                   0.000     0.000    enet0_gmii_rxd[1]
+    V16                  IBUF (Prop_ibuf_I_O)         0.239     0.239 r  enet0_gmii_rxd_IBUF[1]_inst/O
+                         net (fo=1, routed)           0.886     1.125    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD[1]
+    SLICE_X26Y42         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 enet0_gmii_rxd[0]
+                            (input port)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.159ns  (logic 0.334ns (28.803%)  route 0.825ns (71.197%))
+  Logic Levels:           1  (IBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    Y16                                               0.000     0.000 r  enet0_gmii_rxd[0] (IN)
+                         net (fo=0)                   0.000     0.000    enet0_gmii_rxd[0]
+    Y16                  IBUF (Prop_ibuf_I_O)         0.334     0.334 r  enet0_gmii_rxd_IBUF[0]_inst/O
+                         net (fo=1, routed)           0.825     1.159    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD[0]
+    SLICE_X26Y49         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[1]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[1]
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.186ns  (logic 0.141ns (11.886%)  route 1.045ns (88.114%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y42         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[1]/C
+    SLICE_X26Y42         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[1]/Q
+                         net (fo=1, routed)           1.045     1.186    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i[1]
+    PS7_X0Y0             PS7                                          r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[1]
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[2]
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.190ns  (logic 0.141ns (11.850%)  route 1.049ns (88.150%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X26Y40         FDRE                         0.000     0.000 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[2]/C
+    SLICE_X26Y40         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i_reg[2]/Q
+                         net (fo=1, routed)           1.049     1.190    design_1_i/processing_system7_0/inst/ENET0_GMII_RXD_i[2]
+    PS7_X0Y0             PS7                                          r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIIRXD[2]
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ENET0_GMII_RX_DV_0
+                            (input port)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.257ns  (logic 0.245ns (19.497%)  route 1.012ns (80.503%))
+  Logic Levels:           1  (IBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    B20                                               0.000     0.000 r  ENET0_GMII_RX_DV_0 (IN)
+                         net (fo=0)                   0.000     0.000    ENET0_GMII_RX_DV_0
+    B20                  IBUF (Prop_ibuf_I_O)         0.245     0.245 r  ENET0_GMII_RX_DV_0_IBUF_inst/O
+                         net (fo=1, routed)           1.012     1.257    design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV
+    SLICE_X26Y68         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_RX_DV_i_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+                            (rising edge-triggered cell PS7)
+  Destination:            design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        1.304ns  (logic 0.622ns (47.706%)  route 0.682ns (52.294%))
+  Logic Levels:           1  (PS7=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    PS7_X0Y0             PS7                          0.000     0.000 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXCLK
+    PS7_X0Y0             PS7 (Prop_ps7_EMIOENET0GMIITXCLK_EMIOENET0GMIITXD[0])
+                                                      0.622     0.622 r  design_1_i/processing_system7_0/inst/PS7_i/EMIOENET0GMIITXD[0]
+                         net (fo=1, routed)           0.682     1.304    design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_i[0]
+    SLICE_X27Y68         FDRE                                         r  design_1_i/processing_system7_0/inst/ENET0_GMII_TXD_reg[0]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

@@ -1,0 +1,9 @@
+verilog xil_defaultlib --include "/media/reza/_dev_sda1/Vivado/2023.2/data/xilinx_vip/include" --include "../../../../HelloWorld.gen/sources_1/bd/design_1/ipshared/ec67/hdl" --include "../../../../HelloWorld.gen/sources_1/bd/design_1/ipshared/6b2b/hdl" \
+"../../../bd/design_1/ip/design_1_processing_system7_0_0/sim/design_1_processing_system7_0_0.v" \
+"../../../bd/design_1/ip/design_1_xlconcat_0_1/sim/design_1_xlconcat_0_1.v" \
+"../../../bd/design_1/ip/design_1_xlconcat_1_0/sim/design_1_xlconcat_1_0.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
